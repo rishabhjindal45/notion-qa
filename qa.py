@@ -4,6 +4,9 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQAWithSourcesChain
 import pickle
 import argparse
+import pathlib
+temp = pathlib.PosixPath
+pathlib.PosixPath = pathlib.WindowsPath
 
 parser = argparse.ArgumentParser(description='Ask a question to the notion DB.')
 parser.add_argument('question', type=str, help='The question to ask the notion DB')
