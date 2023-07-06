@@ -20,8 +20,9 @@ chain = VectorDBQAWithSourcesChain.from_llm(llm=OpenAI(temperature=0), vectorsto
 
 
 # From here down is all the StreamLit UI.
-st.set_page_config(page_title="Blendle Notion QA Bot", page_icon=":robot:")
-st.header("Blendle Notion QA Bot")
+st.set_page_config(page_title="Suncorp Car Insurance QA Bot", page_icon=":robot:")
+st.header("Suncorp Car Insurance QA Bot")
+st.subheader("Ask me anything about Suncorp's Car Insurance!")
 
 if "generated" not in st.session_state:
     st.session_state["generated"] = []
