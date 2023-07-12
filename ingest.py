@@ -5,6 +5,7 @@ import faiss
 from langchain.vectorstores import FAISS
 from langchain.embeddings import OpenAIEmbeddings
 import pickle
+import codecs
 
 
 # Here we load in the data in the format that Notion exports it in.
@@ -13,7 +14,8 @@ ps = list(Path("Notion_DB/").glob("**/*.md"))
 data = []
 sources = []
 for p in ps:
-    with open(p) as f:
+    with codecs.open(p, encoding='utf-8') as f:
+    # with open(p) as f:    
         data.append(f.read())
     sources.append(p)
 
