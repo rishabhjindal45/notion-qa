@@ -61,7 +61,7 @@ if user_input:
     sources = [doc.metadata for doc in result['source_documents']]
     # result = chain({"question": user_input})
     # output = f"Answer: {result['answer']}\nSources: {result['sources']}"
-    output = f"Answer: {result['result']}\nSources: {sources}"
+    output = f"Answer: {result['result']}\nSources: {str(sources[0]['source'])[10:]}"
 
     st.session_state.past.append(user_input)
     st.session_state.generated.append(output)
