@@ -60,7 +60,7 @@ if user_input:
     print(f"Answer: {result['result']}")
     sources = [doc.metadata for doc in result['source_documents']]
     sources = list(set([str(source['source'])[10:-3] for source in sources]))
-    output = f"Answer:\n {result['result']}\n\nSources: \n" + '\n'.join(sources)
+    output = f"Answer:\n\n {result['result']}\n\nSources: \n\n" + '\n\n'.join(sources)
     
     # result = chain({"question": user_input})
     # output = f"Answer: {result['answer']}\nSources: {result['sources']}"
