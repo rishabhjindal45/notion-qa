@@ -57,7 +57,7 @@ if user_input:
     print(f"Answer: {result['result']}")
     sources = [doc.metadata for doc in result['source_documents']]
     sources = list(set([str(source['source'])[10:-3] for source in sources]))
-    output = f"Answer:\n {result['result']}\n\nSources: \n" + '\n'.join(sources)
+    output = f"Answer:\n\n {result['result']}\n\nSources: \n\n" + '\n\n'.join(sources)
     # Create columns for the buttons
     col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12 = st.columns([1,1,1,1,1,1,1,1,1,1,1,1])
 
@@ -79,10 +79,14 @@ if user_input:
     st.session_state.generated.append(output)
 
 if st.session_state["generated"]:
+    with st.expander("Conversation", expanded=True):
+        for i in range(len(st.session_state['generated'])-1, -1, -1):
+            st.info(st.session_state["past"][i],icon="🧐")
+            st.success(st.session_state["generated"][i], icon="🤖")
 
-    for i in range(len(st.session_state["generated"]) - 1, -1, -1):
-        message(st.session_state["generated"][i], key=str(i))
-        message(st.session_state["past"][i], is_user=True, key=str(i) + "_user")
+    # for i in range(len(st.session_state["generated"]) - 1, -1, -1):
+    #     message(st.session_state["generated"][i], key=str(i))
+    #     message(st.session_state["past"][i], is_user=True, key=str(i) + "_user")
 
 
 with st.sidebar:
