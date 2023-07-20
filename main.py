@@ -95,7 +95,7 @@ with st.sidebar:
     This app let's you chat with Therapeutic Goods (Poisons Standard—July 2023) Instrument 2023 through the power of Large Language Models (LLMs).
                 
     You can ask it questions about:
-    * Dangerous Poisons
+    * Poisons
     * Controlled Drugs
     * Prohibited Substances
     * General Exemptions
