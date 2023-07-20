@@ -37,9 +37,9 @@ chain_type_kwargs = chain_type_kwargs, return_source_documents=True)
 
 
 # From here down is all the StreamLit UI.
-st.set_page_config(page_title="Blendle HR QA Bot", page_icon=":robot:")
-st.header("Blendle HR QA Bot")
-st.subheader("Ask me anything about Blendle's HR Policies!")
+st.set_page_config(page_title="TGA QA Bot", page_icon=":robot:")
+st.header("TGA QA Bot")
+st.subheader("Ask me anything about Therapeutic Goods (Poisons Standard—July 2023) Instrument 2023")
 
 if "generated" not in st.session_state:
     st.session_state["generated"] = []
@@ -91,15 +91,15 @@ if st.session_state["generated"]:
 
 with st.sidebar:
     st.markdown("""
-    # Welcome to the Blendle HR QA Bot! 
-    This app let's you chat with Blendle's HR documentation through the power of Large Language Models (LLMs).
+    # Welcome to the TGA QA Bot! 
+    This app let's you chat with Therapeutic Goods (Poisons Standard—July 2023) Instrument 2023 through the power of Large Language Models (LLMs).
                 
     You can ask it questions about:
-    1. Blendle's values
-    2. Blendle's social code
-    3. Diversity and inclusion
-    4. Hiring
-    5. Perks and benefits
+    * Dangerous Poisons
+    * Controlled Drugs
+    * Prohibited Substances
+    * General Exemptions
+    * First Aid Instructions
                 
     And lots more! So what are you waiting for? Go ahead and ask your first question!
                 
